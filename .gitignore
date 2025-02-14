@@ -1,4 +1,4 @@
-updateWebsite.py
+*.py
 *.tsv
 *.csv
 *.json
