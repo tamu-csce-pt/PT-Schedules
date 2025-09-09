@@ -114,6 +114,7 @@ def main(skipPics):
         # '''
         
         html = f'''
+            <div class="peerTeacher">
             <h3><img alt="{name}" class="float-right" src="{imageLinks[name]}" width="auto" height="150"/></h3>
             <h3>{name}</h3>
             <p class = "ContentP"><strong>Email:</strong> {pt["Email"]}</p>
@@ -129,7 +130,7 @@ def main(skipPics):
             <ul>
             {getOfficeHourString(pt['Office Hours - Manual'])}
             </ul>
-            <hr/>
+            </div>
         '''
         htmlString += html
 

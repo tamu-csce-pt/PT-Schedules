@@ -1,0 +1,229 @@
+/* basic reset */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Open Sans",Arial,sans-serif;
+  font-weight: 400;
+  background: #ffffff;
+  color: #000;
+}
+
+/* header */
+.main-header {
+  background-color: #500000;
+  color: #fff;
+  padding: 1.5rem 11rem;
+}
+.main-header h1 { margin: 0; }
+
+/* overall page wrapper */
+.main-wrapper {
+  padding: 10rem;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* section wrapper (keeps spacing). keep this as block so PT list sits below */
+.main-content {
+  width: 100%;
+}
+
+/* IMPORTANT: this is the direct parent of .html-content and .sidebar */
+#maincontent {
+  display: flex;            /* <-- makes html-content + sidebar sit side-by-side */
+  gap: 1.5rem;
+  align-items: flex-start;  /* align tops */
+  width: 100%;
+}
+
+/* Left content */
+.html-content {
+  flex: 2 1 65%;
+  padding: 1.5rem;   /* added padding inside */
+  line-height: 1.5;
+}
+
+/* Sidebar container */
+.sidebar {
+  flex: 1 1 30%;
+  background-color: #500000;
+  color: #ffffff;
+  padding: .5rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+/* Sidebar list */
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sidebar items */
+.sidebar li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* subtle separator */
+}
+
+/* Remove line under last item */
+.sidebar li:last-child {
+  border-bottom: none;
+}
+
+/* Sidebar links */
+.sidebar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  display: block; /* makes full row clickable */
+  transition: background 0.2s, padding-left 0.2s;
+}
+
+/* Hover effect */
+.sidebar a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding-left: 0.5rem; /* subtle slide */
+}
+
+/* Active link */
+.sidebar a.active {
+  font-weight: bold;
+  color: #ffcc99; /* or another accent */
+}
+
+
+/* Peer Teacher list (flexbox grid) */
+.PT.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+.PT.list > div {
+  flex: 1 1 calc(50% - 1.5rem);
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+
+/* Breadcrumbs (horizontal) */
+.breadcrumbs ul {
+  list-style: none;
+  margin: 0 0 0.5rem 0;
+  padding: 11rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-weight: bold;
+}
+.breadcrumbs li::after {
+  content: "›";
+  margin-left: 0.5rem;
+  color: #777;
+}
+.breadcrumbs li:last-child::after { content: ""; }
+.breadcrumbs a { color: #500000; text-decoration: none; }
+.breadcrumbs a:hover { text-decoration: underline; }
+
+/* Responsive: stack on smaller screens */
+/* Responsive: stack on smaller screens */
+@media (max-width: 900px) {
+  #maincontent {
+    flex-direction: column;  /* stack children vertically */
+  }
+
+  .html-content {
+    order: 1;   /* keep content first */
+    width: 100%;
+  }
+
+  .sidebar {
+    order: 2;   /* sidebar comes after content */
+    flex: none;
+    width: 100%;
+    max-width: none;
+  }
+
+  /* PT list becomes single column */
+  .PT.list > div {
+    flex: 1 1 100%;
+  }
+
+  .breadcrumbs ul{
+    padding: 1rem;
+  }
+
+  .main-header {
+    padding: 1rem;
+  }
+
+  .main-wrapper {
+    padding: 1rem;
+  }
+}
+
+.peerTeacher {
+  position: relative;
+  padding: 1rem;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* Target the image inside */
+.peerTeacher img {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  height: 150px;
+  width: auto;
+  border-radius: 0.25rem;
+}
+
+/* Add spacing so text doesn't run under the photo */
+.peerTeacher h3,
+.peerTeacher p,
+.peerTeacher ul {
+  margin-right: 170px; /* slightly larger than image width */
+}
+
+.skip-nav {
+  position:absolute;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:center;
+  -ms-flex-pack:center;
+  justify-content:center;
+  width:100%;
+  top:-5rem;
+}
+.skip-nav:focus {
+  top:0;
+  -webkit-transition:top .5s;
+  transition:top .5s;
+}
+
+/* Headings inside html-content */
+.html-content h2,
+h3 {
+  color: #500000; /* TAMU maroon */
+  font-weight: bold;
+}
+
+/* Links inside html-content */
+.html-content a {
+  color: #500000;
+  text-decoration: underline; /* optional for visibility */
+}
+
+.html-content a:hover {
+  color: #800000; /* slightly darker maroon on hover */
+}
