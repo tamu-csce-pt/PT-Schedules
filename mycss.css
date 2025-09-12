@@ -13,6 +13,7 @@ body {
   background-color: #500000;
   color: #fff;
   padding: 1.5rem 11rem;
+  font-style: italic;
 }
 .main-header h1 { margin: 0; }
 
@@ -211,11 +212,20 @@ body {
   transition:top .5s;
 }
 
+.main h2{
+  padding-left: 11rem;
+  color: #500000; /* TAMU maroon */
+  font-weight: bold;
+  font-size: 50;
+}
+
 /* Headings inside html-content */
 .html-content h2,
 h3 {
   color: #500000; /* TAMU maroon */
   font-weight: bold;
+  padding-left: 0;
+  font-size: x-large;
 }
 
 /* Links inside html-content */
