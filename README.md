@@ -1,7 +1,7 @@
 ## To use:
 
 1. Manually edit any page besides `index.html`, such as weekly reviews, awards, gallery, and previous PTs (for this one just rename the index.html file and create an updated one later)
-2. Run office hours automate with the office hours sheet as a .xlsx file
+2. Download the office hours sheet as a .xlsx file and run `office_hours_automate.py`
 3. Add result to PT sheet
 4. Download PT website tab as tsv
 5. Make sure all photos in drive are accessible to anyone with the link
