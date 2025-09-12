@@ -267,3 +267,38 @@ h3 {
   flex: 1 1 100%;
   margin-bottom: 2rem;
 }
+
+/* Base button style */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #500000; /* Aggie maroon */
+  color: #ffffff !important;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Hover & focus */
+.button:hover,
+.button:focus {
+  background-color: #720000; /* Slightly lighter maroon */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.25);
+}
+
+/* Active (clicked) state */
+.button:active {
+  background-color: #3a0000;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Optional: make it responsive */
+.button {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.2;
+}
