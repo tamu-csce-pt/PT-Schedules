@@ -237,3 +237,33 @@ h3 {
 .html-content a:hover {
   color: #800000; /* slightly darker maroon on hover */
 }
+
+/* Prevent images from stretching layout */
+.captioned-media img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* keeps aspect ratio while filling */
+  border-radius: 0.5rem;
+}
+
+/* Keep figure from overflowing */
+.captioned-media .figure-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Figcaption styling */
+.captioned-media figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* Ensure section respects flexbox and doesn’t push sidebar */
+.section-wrap--None {
+  flex: 1 1 100%;
+  margin-bottom: 2rem;
+}
