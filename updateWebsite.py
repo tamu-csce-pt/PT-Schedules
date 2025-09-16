@@ -128,7 +128,7 @@ def main(skipPics):
             </ul>
             <p class = "ContentP"><strong>Office Hours:</strong></p>
             <ul>
-            {getOfficeHourString(pt['Office Hours - Manual'])}
+            {getOfficeHourString(pt['Office Hours - Script'])}
             </ul>
             </div>
         '''
