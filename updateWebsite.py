@@ -1,9 +1,8 @@
 import requests
 import argparse
 import pandas as pd
-#from PIL import Image
-#from io import BytesIO
-#import math
+
+skipPics = False # CHANGE THIS WHEN NEEDED
 
 parser = argparse.ArgumentParser()
 parser.add_argument("tsvfile", type=str, metavar='str')
@@ -144,5 +143,4 @@ def main(skipPics):
             indexFile.write(text.split("<!--CODE-->")[1])
 
 if __name__ == "__main__":
-    skipPics = True # CHANGE THIS WHEN NEEDED
     main(skipPics)
