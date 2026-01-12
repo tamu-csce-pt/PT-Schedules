@@ -2,7 +2,7 @@ import requests
 import argparse
 import pandas as pd
 
-skipPics = False # CHANGE THIS WHEN NEEDED
+skipPics = True # CHANGE THIS WHEN NEEDED
 
 parser = argparse.ArgumentParser()
 parser.add_argument("tsvfile", type=str, metavar='str')
