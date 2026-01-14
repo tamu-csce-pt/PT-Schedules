@@ -1,10 +1,3 @@
-import sys
-print("Python executable:", sys.executable)
-print("Python version:", sys.version)
-print("\nSys.path (where Python looks for modules):")
-for path in sys.path:
-    print(path)
-
 import xlwings as xlw
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
