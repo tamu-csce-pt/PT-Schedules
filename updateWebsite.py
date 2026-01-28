@@ -3,7 +3,7 @@ import argparse
 import pandas as pd
 
 skipPics = True # CHANGE THIS WHEN NEEDED
-isOldSemester = True # Leave False unless you're adding to Previous Peer Teachers
+isOldSemester = False # Leave False unless you're adding to Previous Peer Teachers
 
 parser = argparse.ArgumentParser()
 parser.add_argument("tsvfile", type=str, metavar='str')
