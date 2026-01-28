@@ -62,7 +62,7 @@ def getOfficeHourString(office_hours: str):
         retString = "TBA"
     return retString
 
-def main(skipPics):
+def main():
     args = parser.parse_args()
     websiteFile = args.tsvfile
     if not websiteFile:
@@ -146,14 +146,27 @@ def main(skipPics):
             '''
         htmlString += html
 
-    with open('index.html', 'w') as indexFile:
+    splitWebsiteFile = websiteFile.split(" - ")[0]
+    semester = splitWebsiteFile.split(" ")[2]
+    year = splitWebsiteFile.split(" ")[3]
+    writeFileName = ""
+    sourceFileName = ""
+    if(isOldSemester):
+        writeFileName = "index" + semester + year + ".html"
+        sourceFileName = "baseprevioushtml.html"
+    else:
+        writeFileName = "index.html"
+        sourceFileName = 'basehtml.html'
+    with open(writeFileName, 'w') as indexFile:
         indexFile.truncate(0)
 
-        with open('basehtml.html', 'r') as base:
+        with open(sourceFileName, 'r') as base:
             text = base.read()
-            indexFile.write(text.split("<!--CODE-->")[0])
-            indexFile.write(htmlString)
-            indexFile.write(text.split("<!--CODE-->")[1])
+            text = text.replace("<!--Semester-->", semester + " " + year)
+            text = text.replace("<!--SEMESTER-->", semester.upper() + " " + year.upper())
+            text = text.replace("<!--CODE-->", htmlString)
+            text = text.replace("images", "images" + semester + year)
+            indexFile.write(text)
 
 if __name__ == "__main__":
-    main(skipPics)
+    main()
