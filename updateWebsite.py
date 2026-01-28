@@ -3,6 +3,7 @@ import argparse
 import pandas as pd
 
 skipPics = True # CHANGE THIS WHEN NEEDED
+isOldSemester = True # Leave False unless you're adding to Previous Peer Teachers
 
 parser = argparse.ArgumentParser()
 parser.add_argument("tsvfile", type=str, metavar='str')
@@ -112,25 +113,37 @@ def main(skipPics):
         #     </ul>
         # '''
         
-        html = f'''
-            <div class="peerTeacher">
-            <h3><img alt="{name}" class="float-right" src="{imageLinks[name]}" width="auto" height="150"/></h3>
-            <h3>{name}</h3>
-            <p class = "ContentP"><strong>Email:</strong> {pt["Email"]}</p>
-            <ul>
-            <li>{getCourseString(pt)}</li>
-            {get313CourseString(pt)}
-            </ul>
-            <p class = "ContentP"><strong>Labs:</strong></p>
-            <ul>
-            {getLabString(pt['Labs'])}
-            </ul>
-            <p class = "ContentP"><strong>Office Hours:</strong></p>
-            <ul>
-            {getOfficeHourString(pt['Office Hours - Script'])}
-            </ul>
-            </div>
-        '''
+        if isOldSemester:
+            html = f'''
+                <div class="peerTeacher">
+                <h3><img alt="{name}" class="float-right" src="{imageLinks[name]}" width="auto" height="150"/></h3>
+                <h3>{name}</h3>
+                <br>
+                <br>
+                <br>
+                <br>
+                </div>
+            '''
+        else:
+            html = f'''
+                <div class="peerTeacher">
+                <h3><img alt="{name}" class="float-right" src="{imageLinks[name]}" width="auto" height="150"/></h3>
+                <h3>{name}</h3>
+                <p class = "ContentP"><strong>Email:</strong> {pt["Email"]}</p>
+                <ul>
+                <li>{getCourseString(pt)}</li>
+                {get313CourseString(pt)}
+                </ul>
+                <p class = "ContentP"><strong>Labs:</strong></p>
+                <ul>
+                {getLabString(pt['Labs'])}
+                </ul>
+                <p class = "ContentP"><strong>Office Hours:</strong></p>
+                <ul>
+                {getOfficeHourString(pt['Office Hours - Script'])}
+                </ul>
+                </div>
+            '''
         htmlString += html
 
     with open('index.html', 'w') as indexFile:
