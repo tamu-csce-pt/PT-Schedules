@@ -2,9 +2,10 @@
 1. Download the office hours sheet as a .xlsx file and run `python3 .\office_hours_automate.py`
 2. Add 2nd column of resulting file to PT Website Information sheet under Office Hours - Script
 3. Download Website Information tab in the google sheet as tsv, then add that tsv to this repo
-4. Make sure all photos in drive are accessible to anyone with the link
+4. Make sure all photos in drive are accessible to anyone with the link and make sure there's an 'images' folder
 5. Turn variables skipPics and isOldSemester to False in `updateWebsite.py` if first time running
 6. Run `python3 ./updateWebsite.py "<filename.tsv>"`
+7. Rename 'images' folder to 'imagesSeasonYear'
 
 # Side pages:
 
