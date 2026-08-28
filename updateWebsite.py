@@ -2,7 +2,7 @@ import requests
 import argparse
 import pandas as pd
 
-skipPics = False #  Leave False if need to download new pics
+skipPics = True #  Leave False if need to download new pics
 isOldSemester = False # Leave False unless you're adding to Previous Peer Teachers
 
 parser = argparse.ArgumentParser()

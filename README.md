@@ -1,7 +1,8 @@
 # Main page:
+Contains 2 things: Office hours + lab hours
 1. Download the office hours sheet as a .xlsx file and run `python3 .\office_hours_automate.py`
 2. Download Website Information tab from the PT google sheet as tsv, then add that tsv to this repo
-3. Add 2nd column (times) of resulting file to PT Website Information sheet (tsv) under Office Hours - Script
+3. Add 2nd column (the times) of resulting file to PT Website Information sheet (tsv) under Office Hours - Script
 4. Ensure all photos in drive are accessible to anyone with the link and make sure there's an 'images' folder
 5. Ensure photo links in the tsv are in the format 'https://drive.google.com/open?id=...'
 6. Turn variables skipPics and isOldSemester to False in `updateWebsite.py` if first time running
@@ -23,5 +24,5 @@ Push updated index.html file to github to rebuild website
 
 For the beginning of a semester, ensure you change the main + week in review pages and add the group photo into the gallery
 
-Whenever you might need to update the individual PT images, update the drive link in the .tsv and make sure that the folder is called 'images' before running updateWebsite.py. Just make sure to rename 'images' to 'imagesSeasonYear' after running the script.  
-You can also just convert an image into a .webp and replace its original.
+Whenever you might need to update the individual PT images, update the drive link in the .tsv and make sure that the folder is called 'images' before running updateWebsite.py. Make sure to rename 'images' to 'imagesSeasonYear' after running the script.  
+You can also just convert an image into a .webp and replace its original instead of using the script.
