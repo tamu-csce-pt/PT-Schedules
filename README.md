@@ -6,7 +6,8 @@
 5. Ensure photo links in the tsv are in the format 'https://drive.google.com/open?id=...'
 6. Turn variables skipPics and isOldSemester to False in `updateWebsite.py` if first time running
 7. Run `python3 ./updateWebsite.py "<filename.tsv>"`
-8. Rename 'images' folder to 'imagesSeasonYear' (need to fix updateWebsite.py so we don't have to do this)
+8. Rename 'images' folder to 'imagesSeasonYear'
+9. Push to github
 
 # Side pages:
 
@@ -21,3 +22,6 @@
 Push updated index.html file to github to rebuild website
 
 For the beginning of a semester, ensure you change the main + week in review pages and add the group photo into the gallery
+
+Whenever you might need to update the individual PT images, update the drive link in the .tsv and make sure that the folder is called 'images' before running updateWebsite.py. Just make sure to rename 'images' to 'imagesSeasonYear' after running the script.  
+You can also just convert an image into a .webp and replace its original.

@@ -69,6 +69,10 @@ def main():
         print("Usage:")
         print("python3 ./updateWebsite.py <path_to_tsvfile>")
         exit(0)
+
+    splitWebsiteFile = websiteFile.split(" - ")[0]
+    semester = splitWebsiteFile.split(" ")[2]
+    year = splitWebsiteFile.split(" ")[3]
     
     websiteInformation = pd.read_csv(websiteFile, sep='\t')
     
@@ -83,6 +87,7 @@ def main():
     for pt in websiteDict:
         # print(pt['Image'])
         name = pt['Name']
+        imageLinks[name] = f'./images/{name}.webp'
         if not skipPics:
             driveLink = pt['Pictures']
             id = driveLink.split(r'/')[-1].split(r'?')[-1]
@@ -90,12 +95,10 @@ def main():
             response = requests.get(f'https://drive.google.com/uc?{id}')
             if response.status_code == 200:
                 print(pt['Name'])
-                imageLinks[pt['Name']] = f'./images/{pt["Name"]}.webp'
-                with open(imageLinks[pt['Name']], 'wb') as f:
+                with open(imageLinks[name], 'wb') as f:
                     for chunk in response.iter_content(1024):
                         f.write(chunk)
-        else:
-            imageLinks[pt['Name']] = f'./images/{pt["Name"]}.webp'
+
         # '''
         #     <h3><img alt="William Aalund" class="float-right" height="125" src="../../_files/_images/_content-images/CSCE-peer-William-Aalund.jpg" width="85"/></h3>
         #     <h3>William Aalund</h3>
@@ -146,9 +149,6 @@ def main():
             '''
         htmlString += html
 
-    splitWebsiteFile = websiteFile.split(" - ")[0]
-    semester = splitWebsiteFile.split(" ")[2]
-    year = splitWebsiteFile.split(" ")[3]
     writeFileName = ""
     sourceFileName = ""
     if(isOldSemester):
