@@ -1,7 +1,7 @@
 # Main page:
 Contains 2 things: Office hours + lab hours
 1. Download Website Information tab from the PT google sheet as tsv, then add that tsv to this repo.
-2. Download the office hours sheet as a .xlsx file and run `python3 .\office_hours_automate.py` to produce a csv
+2. Download the office hours sheet as a .xlsx file and run `python3 .\office_hours_automate.py`, select the .xlsx, and make up a name for the output csv file
 3. In excel, add the 2nd column (the times) of the csv to PT Website Information sheet (tsv) under Office Hours - Script
 4. Ensure all photos in drive are accessible to anyone with the link and make sure there's an 'images' folder
 5. Ensure photo links in the tsv are in the format 'https://drive.google.com/open?id=...' and to remove any erroroneous rows (which can be done easily in a text editor)
